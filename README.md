@@ -21,12 +21,16 @@ This portfolio is a reflection of my journey as a developer. Here, you'll find a
 # 🛠️ Setup & Installation
 
 To view or modify this project locally:
+
 **1.** Clone the repository:
 git clone https://github.com/your-username/your-portfolio-repo.git
+
 **2.** Navigate to the project directory:
 cd your-portfolio-repo
+
 **3.** Install dependencies:
 npm install
+
 **4.** Start the development server:
 npm run dev
 
@@ -34,6 +38,8 @@ npm run dev
 
 Feel free to reach out if you’re interested in collaborating or just want to connect!
 
-**Email:** issamhamani2000@gmail.com
-**LinkedIn:** https://www.linkedin.com/in/issam-hamani-686771321/
-**GitHub:** https://github.com/ihamani0
+**Email:** issamhamani2000@gmail.com.
+
+**LinkedIn:** https://www.linkedin.com/in/issam-hamani-686771321/.
+
+**GitHub:** https://github.com/ihamani0.
