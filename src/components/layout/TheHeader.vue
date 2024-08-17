@@ -2,13 +2,13 @@
     <header class="container mx-auto ">
         <nav class="relative">
             <div class="hidden md:flex justify-center items-center space-x-6 p-6 shadow-sm ">
-                <a href="" class="font-poppins text-xl hover:scale-95  hover:text-orange-500 transition-all ease-in ">
+                <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in ">
                     About</a>
-                <a href="" class="font-poppins text-xl hover:scale-95  hover:text-orange-500 transition-all ease-in">
+                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in">
                     Project</a>
-                <a href="" class="font-poppins text-xl hover:scale-95 hover:text-orange-500 transition-all ease-in">
+                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in">
                     Skills</a>
-                <a href="" class="font-poppins text-xl hover:scale-95  hover:text-orange-500 transition-all ease-in">
+                <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in">
                     Contact</a>
             </div>
 

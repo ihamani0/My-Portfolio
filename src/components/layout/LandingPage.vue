@@ -1,5 +1,5 @@
 <template>
-    <section class="my-10">
+    <section class="mb-40">
         <div class="container mx-auto my-20 max-w-screen-xl  ">
             <div class="flex flex-col md:flex-row items-center justify-center 
                     p-4  bg-white shadow-md rounded-lg md:p-0 md:shadow-none md:rounded-none md:bg-none"
@@ -8,7 +8,7 @@
                 <div ref="intro_img" class="rounded-full overflow-hidden w-48 h-48 md:w-80 md:h-80 m-6
                     transform  -translate-x-full opacity-0 transition-all duration-500 ease-out">
                     <img src="../../assets/Me.jpg" alt="Me" 
-                        class="w-full w-1 h-full object-cover rounded-full">
+                        class="w-full h-full object-cover rounded-full">
                 </div>
                     
 
