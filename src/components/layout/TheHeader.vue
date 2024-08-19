@@ -1,13 +1,15 @@
 <template>
-    <header class="container mx-auto ">
+    <header class="container mx-auto">
         <nav class="relative">
             <div class="hidden md:flex justify-center items-center space-x-6 p-6 shadow-sm ">
-                <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in ">
-                    About</a>
+
+                <a href="#about" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in "
+                    @click.prevent="scrollToAbout" >About</a>
+
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in">
                     Project</a>
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in">
-                    Skills</a>
+                    Skilles</a>
                 <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in">
                     Contact</a>
             </div>
@@ -51,18 +53,25 @@
 
 
 export default {
+    props : {
+        scrollToAbout: {
+            type: Function,
+            required: true,
+            },
+    } ,
     methods: {
         toggoleMenu() {
 
-            if (this.$refs.menuMobile.classList.contains('scale-y-0')) {
+            const menuMobile = this.$refs.menuMobile;
+            if (menuMobile.classList.contains('scale-y-0')) {
 
-                this.$refs.menuMobile.classList.remove('scale-y-0', 'hidden');
-                this.$refs.menuMobile.classList.add('scale-y-100');
+                menuMobile.classList.remove('scale-y-0', 'hidden');
+                menuMobile.classList.add('scale-y-100');
             } else {
-                this.$refs.menuMobile.classList.remove('scale-y-100');
-                this.$refs.menuMobile.classList.add('scale-y-0');
+                menuMobile.classList.remove('scale-y-100');
+                menuMobile.classList.add('scale-y-0');
                 setTimeout(() => {
-                    this.$refs.menuMobile.classList.add('hidden');
+                    menuMobile.classList.add('hidden');
                 }, 300); // Match this duration with your Tailwind duration
             }
 

@@ -1,5 +1,7 @@
 <template>
-    <section class=" container mb-40 flex flex-col items-center space-y-8" >
+    <section  ref="aboutBox"  v-show="isAboutVisible"
+            class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
+
         <header class="w-full text-center">
             <h1 class="mb-3 text-slate-400">get to know more</h1>
             <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">About Me</h1>
@@ -47,6 +49,66 @@
 </template>
 <script>
 export default {
-    
+    data(){
+        return {
+            isAboutVisible : false,
+        }
+    },
+    methods : {
+        handleScroll(){
+            const boxElement = this.$refs.aboutBox;
+
+                if(boxElement){
+                    const boxTop = boxElement.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    
+                    // Check if the element is within the viewport
+                        if (boxTop < windowHeight) {
+                        this.isAboutVisible = true;
+                        } else {
+                        this.isAboutVisible = false;
+                        }
+                }
+        },
+        
+    },
+    mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); // Check on mount
+
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
 }
 </script>
+<style scoped>
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+
+    .fade-in-up {
+    animation: fadeInUp 1s ease-out;
+    }
+
+    /* .box {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .box.visible {
+    opacity: 1;
+    transform: translateY(0);
+    } */
+</style>
