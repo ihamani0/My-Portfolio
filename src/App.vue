@@ -1,18 +1,17 @@
 <template>
     <div class="font-poppins">
-        <TheHeader :scrollToAbout="scrollToAboutSection">
-
-        </TheHeader>
+        
+        <TheHeader :scrollToSection="scrollToSection"></TheHeader>
         <landing-page></landing-page>
         
 
         <AboutMe ref="aboutSection"></AboutMe>
-        <skills></skills> 
+        <skills ref="skillSection"></skills> 
 
-        <MyProject></MyProject>
+        <MyProject ref="projectSection"></MyProject>
 
-        <contact></contact>
-        <Footer></Footer>
+        <contact ref="contactSection"></contact>
+        <Footer :scrollToSection="scrollToSection"></Footer>
     </div>
     
 </template>
@@ -37,16 +36,18 @@ export default {
         Footer
     },
     methods : {
-        scrollToAboutSection() {
-            const aboutSection = this.$refs.aboutSection.$el;
-            if (aboutSection) {
-                window.scroll({
-                    top: aboutSection.offsetTop,
-                    behavior: 'smooth'
-                });
+        scrollToSection(sectionName) {
+            const section = this.$refs[sectionName];
+            if (section) {
+                section.$el.scrollIntoView({behavior: 'smooth'});
             }
         },
     }
 }
 </script>
 
+<style>
+html, body {
+    scroll-behavior: smooth !important;
+}
+</style>

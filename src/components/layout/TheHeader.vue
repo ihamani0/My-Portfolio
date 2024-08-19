@@ -4,14 +4,18 @@
             <div class="hidden md:flex justify-center items-center space-x-6 p-6 shadow-sm ">
 
                 <a href="#about" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in "
-                    @click.prevent="scrollToAbout" >About</a>
+                    @click.prevent="scrollToSection('aboutSection')" >About</a>
 
-                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in">
-                    Project</a>
-                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in">
-                    Skilles</a>
-                <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in">
-                    Contact</a>
+
+                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in"
+                    @click.prevent="scrollToSection('skillSection')">Skilles</a>
+                
+                <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in"
+                    @click.prevent="scrollToSection('projectSection')">Project</a>
+                
+                
+                <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in"
+                    @click.prevent="scrollToSection('contactSection')">Contact</a>
             </div>
 
             <!-- For mobil -->
@@ -54,10 +58,10 @@
 
 export default {
     props : {
-        scrollToAbout: {
+        scrollToSection: {
             type: Function,
             required: true,
-            },
+        }
     } ,
     methods: {
         toggoleMenu() {

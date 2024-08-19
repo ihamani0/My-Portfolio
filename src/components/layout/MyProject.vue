@@ -1,5 +1,5 @@
 <template>
-    <section  
+    <section  ref="box" v-show="isAboutVisible"
             class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
@@ -51,3 +51,60 @@
     
     </section>
 </template>
+<script>
+export default {
+    data(){
+        return {
+            isAboutVisible : false,
+        }
+    },
+    methods : {
+        handleScroll(){
+            const boxElement = this.$refs.box;
+
+                if(boxElement){
+                    const boxTop = boxElement.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    
+                    // Check if the element is within the viewport
+                        if (boxTop < windowHeight) {
+                        this.isAboutVisible = true;
+                        } else {
+                        this.isAboutVisible = false;
+                        }
+                }
+        },
+        
+    },
+    mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll(); // Check on mount
+
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
+    },
+}
+</script>
+
+
+<style scoped>
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+
+        opacity: 1;
+        transform: translateX(0);
+    }
+    }
+
+    .fade-in-up {
+    animation: fadeInUp 1s ease-out;
+    }
+
+</style>
