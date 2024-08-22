@@ -1,5 +1,5 @@
 <template>
-    <section  ref="box" v-show="isAboutVisible"
+    <section  ref="box" v-show="isAboutVisible" v-if="skilles && skilles.Frontend"
             class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
@@ -9,6 +9,7 @@
         
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:justify-items-center w-11/12">
                 
+
                 <!-- Frontend -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-4 md:space-y-3 ">
 
@@ -18,61 +19,20 @@
                     <!-- Containe -->
                     <div class= "flex flex-wrap justify-center gap-6 w-full ">
 
+
+                        <mini-card v-for="(skill,index) in skilles.Frontend"
+                        :key="index"
+                        :nameSkill="skill.nameSkill"
+                        :img="skill.img"
+                        :level="skill.Level"
+                        >
+                        </mini-card>
                         <!-- Child Divs -->
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/html.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Html</p>
-                                <p class="font-light text-xs text-slate-950">Experienced</p>
-                            </div>
-                        </div>
-
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/css.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">CSS</p>
-                                <p class="font-light text-xs text-slate-950">Intermediate</p>
-                            </div>
-                        </div>
-
-                        <div class="w-1/3 p-4  rounded-lg  space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/js.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">JS</p>
-                                <p class="font-light text-xs text-slate-950">Intermediate</p>
-                            </div>
-                        </div>
-
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/tailwind.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Tailwind</p>
-                                <p class="font-light text-xs text-slate-950">Intermediate</p>
-                            </div>
-                        </div>
-
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md flex justify-between items-center">
-                            
-                            <img src="../../assets/vue.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Vue Js</p>
-                                <p class="font-light text-xs text-slate-950">Basic</p>
-                            </div>
-                        </div>
-                        
                     </div>
                     
                 </div>
                 <!-- End dic Expirnce -->
+
 
                 <!-- Backend -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-3 md:relative">
@@ -82,51 +42,17 @@
                     <!-- Containe -->
                     <div class= "flex flex-wrap justify-center gap-6 w-full">
 
-                        <!-- Child Divs -->
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/php.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Php</p>
-                                <p class="font-light text-xs text-slate-950">Intermediate</p>
-                            </div>
-                        </div>
-
-
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/laravel.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Laravel</p>
-                                <p class="font-light text-xs text-slate-950">Experienced</p>
-                            </div>
-                        </div>
-
-
-                        <div class="w-1/3 p-4  rounded-lg  space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/postgre.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Postgres</p>
-                                <p class="font-light text-xs text-slate-950">basic</p>
-                            </div>
-                        </div>
-
-                        <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                            
-                            <img src="../../assets/mysql.svg" class="w-6 h-6">
-                            
-                            <div class="flex flex-col justify-start">
-                                <p class="font-semibold text-slate-950">Mysql</p>
-                                <p class="font-light text-xs text-slate-950">Intermediate</p>
-                            </div>
-                        </div>
+                        <mini-card v-for="(skill,index) in skilles.Backend"
+                        :key="index"
+                        :nameSkill="skill.nameSkill"
+                        :img="skill.img"
+                        :level="skill.Level"
+                        >
+                        </mini-card>
                     </div>
                     
                 </div><!-- End dic Expirnce -->
+
 
                 <!-- Other -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-3 md:relative ">
@@ -135,50 +61,13 @@
 
                     <div class= "flex flex-wrap justify-center gap-6 w-full">
 
-                                <!-- Child Divs -->
-                                <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                                    
-                                    <img src="../../assets/git.svg" class="w-6 h-6">
-                                    
-                                    <div class="flex flex-col justify-start">
-                                        <p class="font-semibold text-slate-950">Git</p>
-                                        <p class="font-light text-xs text-slate-950">Intermediate</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="w-1/3 p-4  rounded-lg space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                                    
-                                    <img src="../../assets/docker.svg" class="w-6 h-6">
-                                    
-                                    <div class="flex flex-col justify-start">
-                                        <p class="font-semibold text-slate-950">Docker</p>
-                                        <p class="font-light text-xs text-slate-950">Intermediate</p>
-                                    </div>
-                                </div>
-
-
-                                <div class="w-1/3 p-4  rounded-lg  space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                                    
-                                    <img src="../../assets/nginx.svg" class="w-6 h-6">
-                                    
-                                    <div class="flex flex-col justify-start">
-                                        <p class="font-semibold text-slate-950">Nginx</p>
-                                        <p class="font-light text-xs text-slate-950">Intermediate</p>
-                                    </div>
-                                </div>
-
-                                <div class="w-1/2 p-4  rounded-lg  space-x-2 shadow-md hover:shadow-lg transition-shadow ease-out flex justify-between items-center">
-                                    
-                                    <img src="../../assets/linux.svg" class="w-6 h-6">
-                                    
-                                    <div class="flex flex-col justify-start w-full">
-                                        <p class="font-semibold text-slate-950 ">Adminstartion</p>
-                                        <p class="font-light text-xs text-slate-950">Intermediate</p>
-                                    </div>
-                                </div>
-
-                                
+                        <mini-card v-for="(skill,index) in skilles.Other"
+                            :key="index"
+                            :nameSkill="skill.nameSkill"
+                            :img="skill.img"
+                            :level="skill.Level"
+                        >
+                        </mini-card>
                     </div>
 
                 </div>
@@ -190,14 +79,38 @@
     </section>
 </template>
 <script>
-export default {
+import MiniCard from "../ui/MiniCard.vue"
+export default { 
+    props : {
+        skilles : {
+            type : Object,
+            required : true
+        }
+    },
+    components : {
+        MiniCard
+    },
     data(){
         return {
             isAboutVisible : false,
+            isMobile: false,
+
         }
     },
     methods : {
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768 ;
+            
+            if (this.isMobile) {
+                    this.isAboutVisible = true;
+                    window.removeEventListener('scroll', this.handleScroll);
+                } else {
+                    window.addEventListener('scroll', this.handleScroll);
+                    this.handleScroll();
+                }
+        },
         handleScroll(){
+            if (this.isMobile) return;
             const boxElement = this.$refs.box;
 
                 if(boxElement){
@@ -216,13 +129,19 @@ export default {
         
     },
     mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); // Check on mount
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+        if (!this.isMobile) {
+            window.addEventListener('scroll', this.handleScroll);
+            this.handleScroll(); // Check on mount
+        }
 
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.checkMobile);
     },
+    
 }
 </script>
 

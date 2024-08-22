@@ -1,5 +1,5 @@
 <template>
-    <section ref="contactBox"  v-show="isAboutVisible"
+    <section ref="box"  v-show="isAboutVisible"
             class=" container mb-40 flex flex-col justify-center items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center"> 
@@ -11,13 +11,13 @@
             <div class="flex flex-col-reverse items-start  md:flex-row md:justify-around md:items-center">
                 <!-- icon + Email -->
                 <div class="flex justify-around items-center space-x-1">
-                    <img src="../../assets/email.svg" class="rounded-full w-7 h-7 object-contain" alt="mail">
+                    <img src="/public/assets/email.svg" class="rounded-full w-7 h-7 object-contain" alt="mail">
                     <a href="mailto:issamhamani2000@gmail.com" class="font-bold hover:underline hover:underline-offset-4 hover:text-gray-500">
                         issamhamani2000@gmail.com</a>
                 </div>
                 <!-- icon + Linkdin -->
                 <div class="flex justify-around items-center space-x-1">
-                    <img src="../../assets/linkedin.svg" class="rounded-full w-9 h-9 object-contain" alt="mail">
+                    <img src="/public/assets/linkedin.svg" class="rounded-full w-9 h-9 object-contain" alt="mail">
                     <a href="https://www.linkedin.com/in/issam-hamani-686771321/" class="font-bold hover:underline hover:underline-offset-4 hover:text-gray-500">
                         LinkdIn</a>
                 </div>
@@ -31,11 +31,25 @@ export default {
     data(){
         return {
             isAboutVisible : false,
+            isMobile: false,
+
         }
     },
     methods : {
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768 ;
+            
+            if (this.isMobile) {
+                    this.isAboutVisible = true;
+                    window.removeEventListener('scroll', this.handleScroll);
+                } else {
+                    window.addEventListener('scroll', this.handleScroll);
+                    this.handleScroll();
+                }
+        },
         handleScroll(){
-            const boxElement = this.$refs.contactBox;
+            if (this.isMobile) return;
+            const boxElement = this.$refs.box;
 
                 if(boxElement){
                     const boxTop = boxElement.getBoundingClientRect().top;
@@ -53,12 +67,17 @@ export default {
         
     },
     mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); // Check on mount
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+        if (!this.isMobile) {
+            window.addEventListener('scroll', this.handleScroll);
+            this.handleScroll(); // Check on mount
+        }
 
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.checkMobile);
     },
 }
 </script>

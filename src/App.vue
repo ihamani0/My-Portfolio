@@ -1,21 +1,34 @@
 <template>
-    <div class="font-poppins">
+    <div class="font-poppins" v-if="AllDetails && AllDetails.Links">
         
         <TheHeader :scrollToSection="scrollToSection"></TheHeader>
-        <landing-page></landing-page>
+        <landing-page :scrollToSection="scrollToSection"
+            :fullName="AllDetails.FullName"
+            :linkCv="AllDetails.LinkCv"
+            :LinkdInLink="AllDetails.Links.linkdIn"
+            :GithubLink="AllDetails.Links.GitHub"
+            :profilImg="AllDetails.profilImg"
+        >
+        </landing-page>
         
 
-        <AboutMe ref="aboutSection"></AboutMe>
-        <skills ref="skillSection"></skills> 
+        <AboutMe ref="aboutSection"
+            :description="AllDetails.Description"
+        ></AboutMe>
 
-        <MyProject ref="projectSection"></MyProject>
+
+        <skills ref="skillSection" :skilles="AllDetails.Skilles"
+        ></skills> 
+
+        <MyProject ref="projectSection" :projects="AllDetails.Projects"></MyProject>
 
         <contact ref="contactSection"></contact>
         <Footer :scrollToSection="scrollToSection"></Footer>
     </div>
-    
+        
 </template>
 <script>
+
 import AboutMe from "./components/layout/About.vue";
 
 import TheHeader from "./components/layout/TheHeader.vue";
@@ -35,6 +48,14 @@ export default {
         Contact,
         Footer
     },
+
+    computed : {
+        AllDetails(){
+            //console.log(this.$store.getters.getDetails)
+            return this.$store.getters.getDetails
+        }
+    },
+
     methods : {
         scrollToSection(sectionName) {
             const section = this.$refs[sectionName];
@@ -42,7 +63,21 @@ export default {
                 section.$el.scrollIntoView({behavior: 'smooth'});
             }
         },
-    }
+        async loadDetails(){
+            
+            try {
+                await this.$store.dispatch("loadDetails");
+                
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+    },
+    created(){
+        this.loadDetails();
+    },
+    
 }
 </script>
 

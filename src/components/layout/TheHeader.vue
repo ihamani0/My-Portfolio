@@ -40,14 +40,18 @@
                 class="hidden md:hidden mt-4 transition-all duration-300 ease-in transform origin-top scale-y-0   absolute top-10 left-2 right-2 z-10">
                 <div
                     class="flex flex-col items-center space-y-6 rounded-lg py-8 px-4 absolute left-20 right-20 shadow-2xl bg-white">
-                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold">
-                        About</a>
-                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold">
-                        Skills</a>
-                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold">
-                        Projects</a>
-                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-in hover:font-semibold">
-                        Contact</a>
+                    
+                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
+                    @click.prevent="scrollToSection('aboutSection')">About</a>
+
+                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
+                    @click.prevent="scrollToSection('skillSection')">Skills</a>
+
+                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
+                    @click.prevent="scrollToSection('projectSection')">Projects</a>
+
+                    <a href="" class="text-slate-700 hover:scale-105 transition-all ease-in hover:font-semibold"
+                    @click.prevent="scrollToSection('contactSection')">Contact</a>
                 </div>
             </div>
         </nav>

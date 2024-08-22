@@ -13,7 +13,7 @@
                 <!-- start div Expirnce -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-0 md:w-1/3 ">
 
-                    <img src="../../assets/experince.svg" class="w-8 h-8">
+                    <img src="/public/assets/experince.svg" class="w-8 h-8">
                     <p class="font-semibold " >Experince</p>
 
                     <!-- Containe -->
@@ -28,7 +28,7 @@
                 <!-- start div Expirnce -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-0 md:w-1/3 ">
 
-                    <img src="../../assets/certificate.svg" class="w-8 h-8">
+                    <img src="/public/assets/certificate.svg" class="w-8 h-8">
                     <p class="font-semibold " >Education</p>
 
                     <!-- Containe -->
@@ -40,22 +40,39 @@
             </div>
             <!-- Paragraph -->
             <div class=" w-3/5">
-                <p class="text-slate-950 leading-loose font-light ">&nbsp;&nbsp;&nbsp;&nbsp;My name is Haman Issam, a dedicated backend developer with a master's degree in cybersecurity. 
-                    I specialize in building secure and efficient server-side applications, 
-                    combining my expertise in backend development with a strong foundation in cybersecurity</p>
+                <p class="text-slate-950 leading-loose font-light ">&nbsp;&nbsp;&nbsp;&nbsp;{{description}}</p>
             </div>
         </div>    
     </section>
 </template>
 <script>
 export default {
+    props : {
+        description : {
+            type : String,
+            required:true
+        }
+    },
     data(){
         return {
             isAboutVisible : false,
+            isMobile: false,
         }
     },
     methods : {
+        checkMobile() {
+            this.isMobile = window.innerWidth <= 768 ;
+            
+            if (this.isMobile) {
+                    this.isAboutVisible = true;
+                    window.removeEventListener('scroll', this.handleScroll);
+                } else {
+                    window.addEventListener('scroll', this.handleScroll);
+                    this.handleScroll();
+                }
+        },
         handleScroll(){
+            if (this.isMobile) return;
             const boxElement = this.$refs.aboutBox;
 
                 if(boxElement){
@@ -74,12 +91,18 @@ export default {
         
     },
     mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-    this.handleScroll(); // Check on mount
+        this.checkMobile();
+        window.addEventListener('resize', this.checkMobile);
+        
+        if (!this.isMobile) {
+            window.addEventListener('scroll', this.handleScroll);
+            this.handleScroll(); // Check on mount
+        }
 
     },
     beforeDestroy() {
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.checkMobile);
     },
 }
 </script>

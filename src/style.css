@@ -5,18 +5,3 @@
 
 
 
-.typing-effect {
-    white-space: nowrap; /* Prevents text from wrapping */
-    overflow: hidden; /* Hides the text that overflows the container */
-    border-right: 2px solid #ea580c; /* Creates the blinking cursor */
-    width: 0; /* Initially hides the text */
-    animation: typing 3s steps(15, end) forwards, blink-caret 0.75s step-end infinite;
-}
-@keyframes typing {
-    from { width: 0; }
-    to { width: 24rem; } /* Adjust this based on the length of your text */
-}
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: #ea580c; } /* Cursor color */
-}
