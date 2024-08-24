@@ -1,10 +1,10 @@
 <template>
     <section  ref="box" v-show="isAboutVisible" v-if="skilles && skilles.Frontend"
-            class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
+            class=" container mx-auto mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
-            <h1 class="mb-3 text-slate-400">explore my</h1>
-            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">Skilles</h1>
+            <h1 class="mb-3 text-slate-400">Explore My </h1>
+            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">Skills</h1>
         </header>
         
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:justify-items-center w-11/12">

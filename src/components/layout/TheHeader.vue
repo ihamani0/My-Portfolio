@@ -4,14 +4,14 @@
             <div class="hidden md:flex justify-center items-center space-x-6 p-6 shadow-sm ">
 
                 <a href="#about" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in "
-                    @click.prevent="scrollToSection('aboutSection')" >About</a>
+                    @click.prevent="scrollToSection('aboutSection')" >About Me</a>
 
 
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in"
-                    @click.prevent="scrollToSection('skillSection')">Skilles</a>
+                    @click.prevent="scrollToSection('skillSection')">Skills</a>
                 
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in"
-                    @click.prevent="scrollToSection('projectSection')">Project</a>
+                    @click.prevent="scrollToSection('projectSection')">Projects</a>
                 
                 
                 <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in"

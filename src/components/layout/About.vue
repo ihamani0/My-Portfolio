@@ -1,6 +1,6 @@
 <template>
     <section  ref="aboutBox"  v-show="isAboutVisible"
-            class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
+            class=" container mx-auto mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
             <h1 class="mb-3 text-slate-400">get to know more</h1>
@@ -14,12 +14,12 @@
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-0 md:w-1/3 ">
 
                     <img src="/public/assets/experince.svg" class="w-8 h-8">
-                    <p class="font-semibold " >Experince</p>
+                    <p class="font-semibold " >Experience</p>
 
                     <!-- Containe -->
                     <div class="w-full flex flex-col justify-center items-center">
                         <p class="block text-slate-900">Backend</p>
-                        <p class="block text-slate-900">1+ Year Experince</p>
+                        <p class="block text-slate-900">1+ Year Experience</p>
                     </div>
                     
                 </div>
@@ -33,7 +33,7 @@
 
                     <!-- Containe -->
                     <div class="w-full flex flex-col justify-center items-center">
-                        <p class="block text-slate-900">Univ Farhat Abbase</p>
+                        <p class="block text-slate-900">University Ferhat Abbas Setif 1</p>
                         <p class="block text-slate-900">Master Degree</p>
                     </div>
                 </div><!-- End dic Expirnce -->

@@ -1,14 +1,14 @@
 <template>
     <section ref="box"  v-show="isAboutVisible"
-            class=" container mb-40 flex flex-col justify-center items-center space-y-8  fade-in-up" >
+            class=" container mx-auto mb-40 flex flex-col justify-center items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center"> 
             <h1 class="mb-3 text-slate-400">Get in Touch</h1>
             <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">Contact</h1>
         </header>
 
-        <div class="p-8 border border-slate-700 mx-4 md:w-1/3 rounded-3xl">
-            <div class="flex flex-col-reverse items-start  md:flex-row md:justify-around md:items-center">
+        <div class="p-8 border border-slate-700 mx-4 xl:w-2/5 2xl:w-1/3 rounded-3xl">
+            <div class="flex flex-col-reverse items-start  xl:flex-row xl:justify-around xl:items-center">
                 <!-- icon + Email -->
                 <div class="flex justify-around items-center space-x-1">
                     <img src="/public/assets/email.svg" class="rounded-full w-7 h-7 object-contain" alt="mail">

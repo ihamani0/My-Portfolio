@@ -1,6 +1,6 @@
 <template>
     <section  ref="box" v-show="isAboutVisible"
-            class=" container mb-40 flex flex-col items-center space-y-8  fade-in-up" >
+            class=" container mx-auto mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
             <h1 class="mb-3 text-slate-400">Browse My Recent</h1>
