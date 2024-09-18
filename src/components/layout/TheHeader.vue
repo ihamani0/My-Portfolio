@@ -4,18 +4,23 @@
             <div class="hidden md:flex justify-center items-center space-x-6 p-6 shadow-sm ">
 
                 <a href="#about" class="font-poppins text-xl hover:scale-95  text-slate-900  hover:text-orange-500 transition-all ease-in "
-                    @click.prevent="scrollToSection('aboutSection')" >About Me</a>
+                    @click.prevent="scrollToSection('aboutSection')" >{{$t("AboutMe")}}</a>
 
 
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900 hover:text-orange-500 transition-all ease-in"
-                    @click.prevent="scrollToSection('skillSection')">Skills</a>
+                    @click.prevent="scrollToSection('skillSection')">{{$t("Skills")}}</a>
                 
                 <a href="" class="font-poppins text-xl hover:scale-95 text-slate-900  hover:text-orange-500 transition-all ease-in"
-                    @click.prevent="scrollToSection('projectSection')">Projects</a>
+                    @click.prevent="scrollToSection('projectSection')">{{$t("Projects")}}</a>
                 
                 
                 <a href="" class="font-poppins text-xl hover:scale-95  text-slate-900 hover:text-orange-500 transition-all ease-in"
-                    @click.prevent="scrollToSection('contactSection')">Contact</a>
+                    @click.prevent="scrollToSection('contactSection')">{{$t("Contact")}}</a>
+            </div>
+
+            <div class="hidden md:block md:absolute md:top-8 md:right-3">
+                <img @click="changeTransState('en')" v-if="currentLanguage === 'fr'" src="/public/assets/flag-us.svg" alt="fr" class="w-6 h-6  cursor-pointer">
+                <img  @click="changeTransState('fr')" v-else src="/public/assets/flag-fr.svg" alt="fr" class="w-6 h-6  cursor-pointer">
             </div>
 
             <!-- For mobil -->
@@ -42,16 +47,16 @@
                     class="flex flex-col items-center space-y-6 rounded-lg py-8 px-4 absolute left-20 right-20 shadow-2xl bg-white">
                     
                     <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
-                    @click.prevent="scrollToSection('aboutSection')">About</a>
+                    @click.prevent="scrollToSection('aboutSection')">{{$t("AboutMe")}}</a>
 
                     <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
-                    @click.prevent="scrollToSection('skillSection')">Skills</a>
+                    @click.prevent="scrollToSection('skillSection')">{{$t("Skills")}}</a>
 
                     <a href="" class="text-slate-700 hover:scale-105 transition-all ease-inhover:font-semibold"
-                    @click.prevent="scrollToSection('projectSection')">Projects</a>
+                    @click.prevent="scrollToSection('projectSection')">{{$t("Projects")}}</a>
 
                     <a href="" class="text-slate-700 hover:scale-105 transition-all ease-in hover:font-semibold"
-                    @click.prevent="scrollToSection('contactSection')">Contact</a>
+                    @click.prevent="scrollToSection('contactSection')">{{$t("Contact")}}</a>
                 </div>
             </div>
         </nav>
@@ -83,8 +88,18 @@ export default {
                 }, 300); // Match this duration with your Tailwind duration
             }
 
+        },
+        changeTransState(state){
+            this.$i18n.locale = state
+            localStorage.setItem('Lang' , state)
         }
-    }
+    },
+    computed: {
+        currentLanguage() {
+        return this.$i18n.locale;
+        }
+    },
+    
 }
 
 </script>

@@ -10,6 +10,6 @@ export default {
         }
 
         context.commit("setDeatils" , responseData)
-    
+        context.commit("SET_DATA_LOADED" , true)
     }
 }

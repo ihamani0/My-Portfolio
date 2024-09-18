@@ -3,8 +3,8 @@
             class=" container mx-auto mb-40 flex flex-col justify-center items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center"> 
-            <h1 class="mb-3 text-slate-400">Get in Touch</h1>
-            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">Contact</h1>
+            <h1 class="mb-3 text-slate-400">{{$t("GetInTouch")}}</h1>
+            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">{{$t("Contact")}}</h1>
         </header>
 
         <div class="p-8 border border-slate-700 mx-4 xl:w-2/5 2xl:w-1/3 rounded-3xl">
@@ -13,12 +13,12 @@
                 <div class="flex justify-around items-center space-x-1">
                     <img src="/public/assets/email.svg" class="rounded-full w-7 h-7 object-contain" alt="mail">
                     <a href="mailto:issamhamani2000@gmail.com" class="font-bold hover:underline hover:underline-offset-4 hover:text-gray-500">
-                        issamhamani2000@gmail.com</a>
+                        {{ Email }}</a>
                 </div>
                 <!-- icon + Linkdin -->
                 <div class="flex justify-around items-center space-x-1">
                     <img src="/public/assets/linkedin.svg" class="rounded-full w-9 h-9 object-contain" alt="mail">
-                    <a href="https://www.linkedin.com/in/issam-hamani-686771321/" class="font-bold hover:underline hover:underline-offset-4 hover:text-gray-500">
+                    <a :href="LinkdIn" class="font-bold hover:underline hover:underline-offset-4 hover:text-gray-500">
                         LinkdIn</a>
                 </div>
             </div>
@@ -28,6 +28,16 @@
 </template>
 <script>
 export default {
+    props : {
+        Email :{
+            type : String,
+            required : true
+        },
+        LinkdIn :{
+            type : String,
+            required : true
+        },
+    },
     data(){
         return {
             isAboutVisible : false,

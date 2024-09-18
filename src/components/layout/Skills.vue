@@ -3,8 +3,8 @@
             class=" container mx-auto mb-40 flex flex-col items-center space-y-8  fade-in-up" >
 
         <header class="w-full text-center">
-            <h1 class="mb-3 text-slate-400">Explore My </h1>
-            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">Skills</h1>
+            <h1 class="mb-3 text-slate-400">{{$t("ExploreMy")}}</h1>
+            <h1 class="mb-3 text-3xl md:text-3xl lg:text-5xl font-bold text-slate-700 ">{{$t("Skills")}}</h1>
         </header>
         
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:justify-items-center w-11/12">
@@ -14,7 +14,7 @@
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-4 md:space-y-3 ">
 
                     
-                    <h1 class="font-semibold text-xl md:text-3xl text-slate-900/40 " >Frontend Development</h1>
+                    <h1 class="font-semibold text-xl xl:text-2xl  2xl:text-3xl text-slate-900/40" >{{$t("FrontendDevelopment")}}</h1>
 
                     <!-- Containe -->
                     <div class= "flex flex-wrap justify-center gap-6 w-full ">
@@ -37,7 +37,7 @@
                 <!-- Backend -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-3 md:relative">
 
-                    <h1 class="font-semibold text-xl md:text-3xl text-slate-900/40 md:absolute md:top-5 " >Backend Development</h1>
+                    <h1 class="font-semibold text-xl xl:text-2xl  2xl:text-3xl text-slate-900/40 md:absolute md:top-5 " >{{$t("BackendDevelopment")}}</h1>
 
                     <!-- Containe -->
                     <div class= "flex flex-wrap justify-center gap-6 w-full">
@@ -57,7 +57,7 @@
                 <!-- Other -->
                 <div class="w-full  border border-slate-800 rounded-3xl flex flex-col justify-center items-center p-6 space-y-3 md:space-y-3 md:relative ">
                     
-                    <h1 class="font-semibold text-xl md:text-3xl text-slate-900/40  md:absolute md:top-5" >Other</h1>
+                    <h1 class="font-semibold text-xl xl:text-2xl  2xl:text-3xl text-slate-900/40  md:absolute md:top-5" >{{$t("Other")}}</h1>
 
                     <div class= "flex flex-wrap justify-center gap-6 w-full">
 

@@ -4,12 +4,12 @@
                     <h1 class="font-semibold text-xl text-slate-700 " >{{ Name }}</h1>
                     <h1 class="font-semibold text-xs text-slate-400 " >{{Technologies}}</h1>
                     
-                    <div class="flex justify-center space-x-3">
-                        <a :href="GithubLinks" class=" px-3 py-2 text-center border border-gray-700 rounded-3xl w-36 hover:bg-gray-700
+                    <div class="flex flex-col  items-start space-y-1 xl:flex-row  justify-center xl:space-x-3 ">
+                        <a :href="GithubLinks" class=" px-3 py-2 text-center border border-gray-700 rounded-3xl w-32 hover:bg-gray-700
                             hover:text-white hover:scale-105 transition-colors ">
                             Github</a>
                         
-                            <a v-if="Demo" :href="Demo" class=" px-3 py-2 text-center border hover:border-gray-700 hover:bg-white hover:text-slate-950 rounded-3xl w-36 bg-gray-700
+                        <a v-if="Demo" :href="Demo" class=" px-3 py-2 text-center border hover:border-gray-700 hover:bg-white hover:text-slate-950 rounded-3xl w-32 bg-gray-700
                             text-white hover:scale-105 transition-colors ">
                             Demo</a>
                     </div>   

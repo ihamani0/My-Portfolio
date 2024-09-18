@@ -2,6 +2,7 @@
     <div class="font-poppins" v-if="AllDetails && AllDetails.Links">
         
         <TheHeader :scrollToSection="scrollToSection"></TheHeader>
+        
         <landing-page :scrollToSection="scrollToSection"
             :fullName="AllDetails.FullName"
             :linkCv="AllDetails.LinkCv"
@@ -12,9 +13,7 @@
         </landing-page>
         
 
-        <AboutMe ref="aboutSection"
-            :description="AllDetails.Description"
-        ></AboutMe>
+        <AboutMe ref="aboutSection"></AboutMe>
 
 
         <skills ref="skillSection" :skilles="AllDetails.Skilles"
@@ -22,7 +21,10 @@
 
         <MyProject ref="projectSection" :projects="AllDetails.Projects"></MyProject>
 
-        <contact ref="contactSection"></contact>
+        <contact ref="contactSection" 
+        :Email="AllDetails.Email"
+        :LinkdIn="AllDetails.Links.linkdIn"
+        ></contact>
         <Footer :scrollToSection="scrollToSection"></Footer>
     </div>
         
@@ -76,6 +78,10 @@ export default {
     },
     created(){
         this.loadDetails();
+        let lang = localStorage.getItem("Lang")
+        if(lang){
+            this.$i18n.locale = lang
+        }
     },
     
 }

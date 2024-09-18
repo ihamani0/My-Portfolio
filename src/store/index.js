@@ -9,6 +9,7 @@ const store =  createStore({
     state(){
         return {
             MyDetails :{},
+            isLoaded : false,
         }
     } ,
     mutations,

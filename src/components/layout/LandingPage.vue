@@ -15,17 +15,17 @@
                 <!-- my self-->
                 <div ref="introself" class="p-6 flex flex-col items-start md:items-center space-y-4 
                         transform translate-x-full opacity-0 transition-all duration-500 ease-out">
-                    <h1 class="font-poppins text ">Hello ,i'm </h1>
+                    <h1 class="font-poppins text ">{{ $t('welcome') }}</h1>
                     <div ref="MyName" class="font-poppins font-bold text-4xl text-gray-900">
                         <!-- <h1 class="font-poppins font-bold text-5xl ">Hamani issam</h1> -->
                     </div>
-                    <h1 class="font-poppins font-bold text-gray-400 text ">Backend Developer </h1>
+                    <h1 class="font-poppins font-bold text-gray-400 text ">{{ $t('BackendDeveloper') }} </h1>
 
                     <div class="flex justify-between space-x-4 p-1 mt-4">
-                        <a :href="linkCv"  class="text-slate-950 border-slate-950 border-2 px-3 py-2 w-36 rounded-full hover:scale-95  ease-in transition-all cursor-pointer" >
-                            Download CV</a>
-                        <button class="text-white bg-slate-950 px-3 py-2 w-36 rounded-full hover:bg-orange-600  ease-in transition-colors"
-                        @click="scrollToSection('contactSection')">Contact Info</button>
+                        <a :href="linkCv"  class="text-slate-950  border-slate-950 border-2 text-xs md:text-base  px-3 py-2 rounded-full hover:scale-95  ease-in transition-all cursor-pointer" >
+                            {{ $t('downloadCv') }}</a>
+                        <button class="text-white bg-slate-950 px-3 py-2 text-xs md:text-base  rounded-full hover:bg-orange-600  ease-in transition-colors"
+                        @click="scrollToSection('contactSection')">  {{ $t('ContactInfo') }}</button>
                     </div>
 
                     <!-- icons -->
