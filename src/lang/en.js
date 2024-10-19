@@ -34,5 +34,6 @@ export default (store) => ( {
     BrowseMyRecent :"Browse My Recent",
     //contact
     GetInTouch : "Get In Touch",
-    
+
+
 })

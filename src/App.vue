@@ -13,7 +13,7 @@
         </landing-page>
         
 
-        <AboutMe ref="aboutSection"></AboutMe>
+        <AboutMe ref="aboutSection" :TimeLine="AllDetails.TimeLine"></AboutMe>
 
 
         <skills ref="skillSection" :skilles="AllDetails.Skilles"

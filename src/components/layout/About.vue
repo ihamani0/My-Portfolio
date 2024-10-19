@@ -46,7 +46,7 @@
         
         <div class="w-auto">
             <ul class="">
-                <time-line  v-for="e in EventTimeline" 
+                <time-line  v-for="e in TimeLine" 
                     :key="e.event" 
                     :event="e.event"
                     :DescriptionEvent="e.DescriptionEvent"
@@ -63,6 +63,12 @@
 import TimeLine from '../ui/TimeLine.vue';
 
 export default {
+    props : {
+        TimeLine : {
+            type : Object , 
+            required : true
+        }
+    } ,
     components : {
         TimeLine
     },
@@ -70,11 +76,6 @@ export default {
         return {
             isAboutVisible : false,
             isMobile: false,
-            EventTimeline : [
-                {event : "2018-2019" , DescriptionEvent : "bac math technique" , isLast : false},
-                {event : "2020-2023" , DescriptionEvent : "Licnce informatique" , isLast : false},
-                {event : "2024-2025" , DescriptionEvent : "Formation cyber securty" , isLast : true} 
-                ]
         }
     },
     methods : {
@@ -116,6 +117,8 @@ export default {
             window.addEventListener('scroll', this.handleScroll);
             this.handleScroll(); // Check on mount
         }
+
+        
 
     },
     beforeDestroy() {

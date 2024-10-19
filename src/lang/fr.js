@@ -32,4 +32,6 @@ export default  (store) => ( {
     BrowseMyRecent :"Parcourir les articles récents",
     //contact
     GetInTouch : "Contactez-moi",
+
+
 })
