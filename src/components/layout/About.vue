@@ -42,15 +42,39 @@
             <div class=" w-3/5">
                 <p class="text-slate-950 leading-loose font-light ">&nbsp;&nbsp;&nbsp;&nbsp;{{$t("Description")}}</p>
             </div>
-        </div>    
+        </div>  
+        
+        <div class="w-auto">
+            <ul class="">
+                <time-line  v-for="e in EventTimeline" 
+                    :key="e.event" 
+                    :event="e.event"
+                    :DescriptionEvent="e.DescriptionEvent"
+                    :isLast="e.isLast"
+                ></time-line>
+            </ul>
+        </div>
+
+        <!-- <time-line event="2018-2019" DescriptionEvent="bac math technique" :isLast="false"></time-line> -->
+
     </section>
 </template>
 <script>
+import TimeLine from '../ui/TimeLine.vue';
+
 export default {
+    components : {
+        TimeLine
+    },
     data(){
         return {
             isAboutVisible : false,
             isMobile: false,
+            EventTimeline : [
+                {event : "2018-2019" , DescriptionEvent : "bac math technique" , isLast : false},
+                {event : "2020-2023" , DescriptionEvent : "Licnce informatique" , isLast : false},
+                {event : "2024-2025" , DescriptionEvent : "Formation cyber securty" , isLast : true} 
+                ]
         }
     },
     methods : {
@@ -101,6 +125,10 @@ export default {
 }
 </script>
 <style scoped>
+
+
+
+
 
 @keyframes fadeInUp {
     from {
