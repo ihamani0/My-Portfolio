@@ -55,7 +55,6 @@
             </ul>
         </div>
 
-        <!-- <time-line event="2018-2019" DescriptionEvent="bac math technique" :isLast="false"></time-line> -->
 
     </section>
 </template>
@@ -128,10 +127,6 @@ export default {
 }
 </script>
 <style scoped>
-
-
-
-
 
 @keyframes fadeInUp {
     from {
